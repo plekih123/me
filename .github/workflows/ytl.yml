@@ -59,11 +59,11 @@ jobs:
     - name: Get ncs2.m3u8
       run: |
         touch ./jpopsong.m3u8
-        sudo cat >./ncs2.m3u8 <<EOL
+        sudo cat >./jpopsong.m3u8 <<EOL
         #EXTM3U
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
-        $(youtube-dl -g -f 94 https://youtu.be/dBZyhU44qoA)
+        $(youtube-dl -g -f 94 https://youtu.be/1MuwvDXImog)
         EOL
     - name: Get skynews.m3u8
       run: |
