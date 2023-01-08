@@ -9,9 +9,8 @@ jobs:
     steps:
     - name: Install yt-dlp
       run: |
-        sudo add-apt-repository ppa:yt-dlp/stable
-        sudo apt update
-        sudo apt install yt-dlp
+            sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+            sudo chmod a+rx /usr/local/bin/yt-dlp
 
     - name: Get abcnewsau.m3u8
       run: |
