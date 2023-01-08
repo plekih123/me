@@ -182,6 +182,15 @@ jobs:
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
         $(youtube-dl -g -f 95 https://www.youtube.com/channel/UC1-ATnDVEwKT6-0aEeJ2ibA/live)
         EOL
+    - name: Get antv.m3u8
+      run: |
+        touch ./antv.m3u8
+        sudo cat >./antv.m3u8 <<EOL
+        #EXTM3U
+        #EXT-X-VERSION:3
+        #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
+        $(youtube-dl -g -f hls-6 https://www.dailymotion.com/video/x8chy4s)
+        EOL
     - name: Get goodlife.m3u8
       run: |
         touch ./goodlife.m3u8
