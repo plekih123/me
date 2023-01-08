@@ -5,12 +5,13 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
-    - name: Install youtube-dl
+    - name: Install yt-dlp
       run: |
-        sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
-        sudo chmod a+rx /usr/local/bin/yt-dlp
+        sudo add-apt-repository ppa:yt-dlp/stable
+        sudo apt update
+        sudo apt install yt-dlp
 
     - name: Get abcnewsau.m3u8
       run: |
@@ -84,7 +85,7 @@ jobs:
         #EXT-X-VERSION:3
         #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5400000
         $(yt-dlp -g -f hls3 https://vk.com/video-122792749_456241869)
-        $|User-Agent=Android
+        $(|User-Agent=Android)
         EOL
     - name: Get mafi2a.m3u8
       run: |
