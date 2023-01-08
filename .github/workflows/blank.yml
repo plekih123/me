@@ -7,12 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-    - name: Install yt-dlp
+    - name: Install youtube-dl
       run: |
-          
-python3 -m pip install --no-deps -U yt-dlp
+        sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+        sudo chmod a+rx /usr/local/bin/yt-dlp
 
- - name: Get abcnewsau.m3u8
+    - name: Get abcnewsau.m3u8
       run: |
         touch ./abcnewsau.m3u8
         sudo cat >./abcnewsau.m3u8 <<EOL
