@@ -33,7 +33,7 @@ jobs:
         EOL
 
 
-	- name : Upload artifact
+    - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: YTlive m3u8
@@ -48,4 +48,3 @@ jobs:
         git commit -m "Update YTlive"
         git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
         git push -f -u origin YTlive
-        
